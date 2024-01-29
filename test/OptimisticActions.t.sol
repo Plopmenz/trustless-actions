@@ -108,6 +108,15 @@ contract OptimisticActionsTest is Test {
         optimisticActions.setAdmin(dao, _admin);
     }
 
+    function test_executeDelay(uint64 _executeDelay) external {
+        vm.assume(block.timestamp + _executeDelay < type(uint64).max); // Otherwise overflow
+        optimisticActions.setExecuteDelay(dao, _executeDelay);
+
+        IDAO.Action[] memory actions = new IDAO.Action[](0);
+        (, uint64 executableFrom) = optimisticActions.createAction(trustlessManagement, role, actions, 0, "");
+        assertEq(executableFrom, block.timestamp + _executeDelay);
+    }
+
     function test_interfaces() external view {
         assert(optimisticActions.supportsInterface(type(IOptimisticActions).interfaceId));
         // As according to spec: https://eips.ethereum.org/EIPS/eip-165
