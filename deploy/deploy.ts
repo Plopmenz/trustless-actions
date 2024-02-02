@@ -1,31 +1,22 @@
-import { Address, Deployer } from "../web3webdeploy/types";
-import { deploy as ensReverseRegistrarDeploy } from "../lib/ens-reverse-registrar/deploy/deploy";
+import { Address, DeployInfo, Deployer } from "../web3webdeploy/types";
 
-export interface DeploymentSettings {
-  admin?: Address;
-  ensReverseRegistar?: Address;
-}
+export interface OptimisticActionsDeploymentSettings
+  extends Omit<DeployInfo, "contract" | "args"> {}
 
-export interface Deployment {
+export interface OptimisticActionsDeployment {
   optimisticActions: Address;
 }
 
 export async function deploy(
   deployer: Deployer,
-  settings?: DeploymentSettings
-): Promise<Deployment> {
-  const admin = settings?.admin ?? "0x2309762aAcA0a8F689463a42c0A6A84BE3A7ea51";
-  deployer.startContext("lib/ens-reverse-registrar");
-  const ensReverseRegistrar =
-    settings?.ensReverseRegistar ??
-    (await ensReverseRegistrarDeploy(deployer)).reverseRegistrar;
-  deployer.finishContext();
-
+  settings?: OptimisticActionsDeploymentSettings
+): Promise<OptimisticActionsDeployment> {
   const optimisticActions = await deployer.deploy({
     id: "OptimisticActions",
     contract: "OptimisticActions",
-    args: [admin, ensReverseRegistrar],
+    ...settings,
   });
+
   return {
     optimisticActions: optimisticActions,
   };

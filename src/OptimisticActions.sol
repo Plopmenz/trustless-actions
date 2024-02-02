@@ -2,14 +2,12 @@
 pragma solidity ^0.8.0;
 
 import {ERC165} from "../lib/openzeppelin-contracts/contracts/utils/introspection/ERC165.sol";
-import {ClaimReverseENS} from "../lib/ens-reverse-registrar/src/ClaimReverseENS.sol";
+import {ENSReverseClaimable} from "../lib/ens-reverse-claimable/src/ENSReverseClaimable.sol";
 
 import {IOptimisticActions, IDAO, IDAOManager, IDAOExtensionWithAdmin} from "./IOptimisticActions.sol";
 
 contract OptimisticActions is ERC165, IOptimisticActions {
     mapping(IDAO dao => DAOInfo info) private daoInfo;
-
-    constructor(address _admin, address _reverseRegistrar) ClaimReverseENS(_reverseRegistrar, _admin) {}
 
     /// @inheritdoc ERC165
     function supportsInterface(bytes4 _interfaceId) public view virtual override returns (bool) {

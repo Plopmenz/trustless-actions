@@ -10,6 +10,6 @@
 [submodule "lib/openzeppelin-contracts"]
 	path = lib/openzeppelin-contracts
 	url = https://github.com/openzeppelin/openzeppelin-contracts
-[submodule "lib/ens-reverse-registrar"]
-	path = lib/ens-reverse-registrar
-	url = https://github.com/plopmenz/ens-reverse-registrar
+[submodule "lib/ens-reverse-claimable"]
+	path = lib/ens-reverse-claimable
+	url = https://github.com/plopmenz/ens-reverse-claimable
