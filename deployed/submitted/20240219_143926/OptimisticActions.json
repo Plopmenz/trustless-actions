@@ -1,0 +1,352 @@
+{
+  "type": "deployment",
+  "id": "OptimisticActions",
+  "batch": "20240219_143926",
+  "deploymentAddress": "0xB6EfC885eaF39E5d3dD4FbBB9b60B1A1BbAE76CD",
+  "constructorArgs": [],
+  "to": "0x4e59b44847b379578588920ca78fbf26c0b4956c",
+  "value": "0",
+  "data": "0x00000000000000000000000000000000000000000000000000000054455354316080806040523461001657610f5a908161001c8239f35b600080fdfe608080604052600436101561001357600080fd5b60003560e01c90816301ffc9a714610d26575080632a9ce78b14610c7c5780639d1978e2146105aa578063c55b6bb71461051d578063c60194ef146101375763f4a523c51461006157600080fd5b346101325760403660031901126101325760043563ffffffff8116809103610132576024356001600160401b038111610132576100a2903690600401610d8f565b91903360005260006020526040600020805460e01c831015610120577f501eaa7d74d1af9b68a69b19872b2c224fce60bb1ce792b6fd42dcd35add7c4391600161011b928560005201602052604060002068ffffffffffffffff0080198254161790556040519182916020835233966020840191610eab565b0390a3005b604051637037cbb560e11b8152600490fd5b600080fd5b3461013257604036600319011261013257610150610d79565b6024359063ffffffff82168203610132576001600160a01b0381166000908152602081905260409020805460e01c63ffffffff841610156101205760019063ffffffff841660005201602052604060002090815460ff811661050b576001600160401b038160081c1642106104fa57600160ff198216178355600183015460038401549360405194859263dabdb38960e01b8452608484019060018060a01b0387166004860152602485015260806044850152600283015480915260a48401600260a48360051b87010194016000526020600020916000915b81831061041d5750505050606483015260009290829003908290849060ff191660011760481c6001600160a01b03165af1928315610411576000926000946102c7575b5060405133926001600160a01b03169163ffffffff16907f541b022fce588a99d41c70b8fb346dac2c36238eab28353e50a1eb6f12efcfd790806102b1888883610ddf565b0390a46102c360405192839283610ddf565b0390f35b925092503d91826000823e6102dc8382610ecc565b6040818481010312610132578051926001600160401b03841161013257808201601f8584010112156101325783820151936001600160401b0385116103fb578460051b91604051956103316020850188610ecc565b8652602086019080850160208585880101011161013257602083860101915b6020858588010101831061036e57505050505060200151928461026c565b82516001600160401b03811161013257828701603f82878a0101011215610132576020818689010101516001600160401b0381116103fb57604051926103be601f8301601f191660200185610ecc565b818452848901604083858a8d010101011161013257836103ee602095938b604088978c8980990193010101610dbc565b8152019301929050610350565b634e487b7160e01b600052604160045260246000fd5b6040513d6000823e3d90fd5b9193949092955060a319898203018252606060018060a01b038754168252600187015460208301526002870191816040820152600092805461045e81610e5a565b80948401526001811690816000146104d45750600114610494575b50505060206003600192970192019301909188959493610229565b909192506000526020600020916000925b8184106104bd57505001608001602060036001610479565b6001816020925460808787010152019301926104a5565b600195506080925060039391509360209460ff191683830152151560051b010192610479565b604051621005c760e91b8152600490fd5b604051636b78fca360e11b8152600490fd5b3461013257604036600319011261013257610536610d79565b6001600160a01b039060243582811691908290036101325781817fbf265e8326285a2747e33e54d5945f7111f2b5edb826eb8c08d4677779b3ff97938560209416958660005260008552610594604060002093845492831690610eed565b6001600160a01b031916179055604051908152a2005b346101325760a0366003190112610132576004356001600160a01b0381169003610132576001600160401b036044351161013257366023604435011215610132576001600160401b036044356004013511610132573660246044356004013560051b604435010111610132576001600160401b03608435116101325761063536608435600401610d8f565b9033600052600060205260406000209081549163ffffffff8360e01c14610c54576001600160e01b03831660e084811c600101901b6001600160e01b0319161781556001600160401b034211610c6a576001600160401b034281166001600160e01b03851660e086811c600101901b6001600160e01b0319161760a01c82160111610c54576001908360e01c60005201602052604060002080546901000000000000000000600160e81b0360043560481b169068ffffffffffffffff006001600160401b0363ffffffff60e01b60018860e01c0160e01b1660018060e01b0388161760a01c166001600160401b0342160160081b169060ff62ffffff60e81b01161717815560243560018201556801000000000000000060443560040135116103fb576002810180546004604435013591829055908111610b9a575b50602460443501600282016000526020600020906000905b60443560040135821061094a5750505060036064359101556040519260c0840160018060a01b03600435168552602435602086015260c0604086015260443560040135905260e084019160e06044356004013560051b860101926024604435019060005b60443560040135811061088b576040878961081989898960643560608601528483036080860152610eab565b906001600160401b038063ffffffff60e01b60018660e01c0160e01b1660018060e01b0386161760a01c168142160116918260a08301527fa21621f43862e8ffca9ac0f258385db445b8e07b7d55571ea0f4c22720ee74823392808660e01c930390a382519160e01c82526020820152f35b90919460df198882030183528535608219604435360301811215610132576044358101602401356001600160a01b0381168103610132576001600160a01b03168252604480358201908101356020840152368190036042190160649091013512156101325760443501606481013501906001600160401b036024830135116101325760248201353603604483011361013257602061093f600193606084816040869701520190604460248201359101610eab565b9701930191016107ed565b8035604435360360821901811215610132576044358101602401356001600160a01b03811681036101325784546001600160a01b0319166001600160a01b039190911617845560448035820190810135600186015536819003604219016064909101351215610132576001600160401b03604435820160648101350160240135116101325760448035820160648101350160248101353603910113610132576109f66002850154610e5a565b601f90818111610b4c575b506000906024606484604435010135846044350101013511600114610a8d57600192600392602092600090604435830160648101350160240135610a73575b506000196044359092016064810135016024013580861b9290921c191690851b1760028701555b01930191019091610789565b60449150606483833501013583833501010101358c610a40565b6002850160005260206000209060005b604435840160648101350160240135601f19168110610b28575060019360039360209391928692602492916044358301606481013501840135601f19811610610afc575b5050604435016064810135010135811b016002870155610a67565b604480358401606481013501918201013560001991850135891b60f8169190911c191690558d80610ae1565b60448035850160648101350183010135835560019092019160209182019101610a9d565b600286016000908152602090819020610b8b9260443586016064810135016024013580860160051c83019386929110610b91575b0160051c0190610e94565b89610a01565b92508192610b80565b6003818102048103610c54576003604435600401358102046044356004013503610c54576002820160005260206000206044356004013560030281015b8260030282018110610bea575050610771565b806000600392556000600182015560028101610c068154610e5a565b9081610c15575b505001610bd7565b600091601f808211600114610c2f575050555b8880610c0d565b91610c4d84929382845260208420940160051c840160018501610e94565b5555610c28565b634e487b7160e01b600052601160045260246000fd5b604051631a93c68960e11b8152600490fd5b3461013257604036600319011261013257610c95610d79565b602435906001600160401b03821690818303610132577f63708007dda8a9534c4427842aafe33b747b77ab2d3f1e98e08936ea7252440e9160209160018060a01b03808216958660005260008552610cf7604060002093845493841690610eed565b67ffffffffffffffff60a01b1990911660a09190911b67ffffffffffffffff60a01b16179055604051908152a2005b34610132576020366003190112610132576004359063ffffffff60e01b821680920361013257602091638521284360e01b8114908115610d68575b5015158152f35b6301ffc9a760e01b14905083610d61565b600435906001600160a01b038216820361013257565b9181601f84011215610132578235916001600160401b038311610132576020838186019501011161013257565b60005b838110610dcf5750506000910152565b8181015183820152602001610dbf565b929190604084016040855281518091526060850160608260051b870101916020809401916000905b85838310610e19575050505050930152565b808060019394959697605f198d82030186528851610e4281518092818552858086019101610dbc565b601f01601f1916010196019493919091019101610e07565b90600182811c92168015610e8a575b6020831014610e7457565b634e487b7160e01b600052602260045260246000fd5b91607f1691610e69565b818110610e9f575050565b60008155600101610e94565b908060209392818452848401376000828201840152601f01601f1916010190565b90601f801991011681019081106001600160401b038211176103fb57604052565b6001600160a01b0391821680610f195750163303610f0757565b604051636587b01b60e11b8152600490fd5b9150503303610f075756fea2646970667358221220e51a2d1f77834d0112a26deb64111addc89faa8ffdef2de6c86450a38cd0253864736f6c63430008170033",
+  "gas": "916506",
+  "from": "0xaF7E68bCb2Fc7295492A00177f14F59B92814e70",
+  "transactionSettings": {
+    "chainId": "80001",
+    "nonce": "467",
+    "baseFee": "1500000016",
+    "priorityFee": "1000000000"
+  },
+  "salt": "\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000TEST1",
+  "artifact": {
+    "abi": [
+      {
+        "type": "function",
+        "name": "createAction",
+        "inputs": [
+          {
+            "name": "_manager",
+            "type": "address",
+            "internalType": "contract IDAOManager"
+          },
+          { "name": "_role", "type": "uint256", "internalType": "uint256" },
+          {
+            "name": "_actions",
+            "type": "tuple[]",
+            "internalType": "struct IDAO.Action[]",
+            "components": [
+              { "name": "to", "type": "address", "internalType": "address" },
+              { "name": "value", "type": "uint256", "internalType": "uint256" },
+              { "name": "data", "type": "bytes", "internalType": "bytes" }
+            ]
+          },
+          {
+            "name": "_failureMap",
+            "type": "uint256",
+            "internalType": "uint256"
+          },
+          { "name": "_metadata", "type": "string", "internalType": "string" }
+        ],
+        "outputs": [
+          { "name": "id", "type": "uint32", "internalType": "uint32" },
+          {
+            "name": "executableFrom",
+            "type": "uint64",
+            "internalType": "uint64"
+          }
+        ],
+        "stateMutability": "nonpayable"
+      },
+      {
+        "type": "function",
+        "name": "executeAction",
+        "inputs": [
+          {
+            "name": "_dao",
+            "type": "address",
+            "internalType": "contract IDAO"
+          },
+          { "name": "_id", "type": "uint32", "internalType": "uint32" }
+        ],
+        "outputs": [
+          {
+            "name": "returnValues",
+            "type": "bytes[]",
+            "internalType": "bytes[]"
+          },
+          { "name": "failureMap", "type": "uint256", "internalType": "uint256" }
+        ],
+        "stateMutability": "nonpayable"
+      },
+      {
+        "type": "function",
+        "name": "rejectAction",
+        "inputs": [
+          { "name": "_id", "type": "uint32", "internalType": "uint32" },
+          { "name": "_metadata", "type": "string", "internalType": "string" }
+        ],
+        "outputs": [],
+        "stateMutability": "nonpayable"
+      },
+      {
+        "type": "function",
+        "name": "setAdmin",
+        "inputs": [
+          {
+            "name": "_dao",
+            "type": "address",
+            "internalType": "contract IDAO"
+          },
+          { "name": "_admin", "type": "address", "internalType": "address" }
+        ],
+        "outputs": [],
+        "stateMutability": "nonpayable"
+      },
+      {
+        "type": "function",
+        "name": "setExecuteDelay",
+        "inputs": [
+          {
+            "name": "_dao",
+            "type": "address",
+            "internalType": "contract IDAO"
+          },
+          {
+            "name": "_executeDelay",
+            "type": "uint64",
+            "internalType": "uint64"
+          }
+        ],
+        "outputs": [],
+        "stateMutability": "nonpayable"
+      },
+      {
+        "type": "function",
+        "name": "supportsInterface",
+        "inputs": [
+          { "name": "_interfaceId", "type": "bytes4", "internalType": "bytes4" }
+        ],
+        "outputs": [{ "name": "", "type": "bool", "internalType": "bool" }],
+        "stateMutability": "view"
+      },
+      {
+        "type": "event",
+        "name": "ActionCreated",
+        "inputs": [
+          {
+            "name": "id",
+            "type": "uint32",
+            "indexed": true,
+            "internalType": "uint32"
+          },
+          {
+            "name": "dao",
+            "type": "address",
+            "indexed": true,
+            "internalType": "contract IDAO"
+          },
+          {
+            "name": "manager",
+            "type": "address",
+            "indexed": false,
+            "internalType": "contract IDAOManager"
+          },
+          {
+            "name": "role",
+            "type": "uint256",
+            "indexed": false,
+            "internalType": "uint256"
+          },
+          {
+            "name": "actions",
+            "type": "tuple[]",
+            "indexed": false,
+            "internalType": "struct IDAO.Action[]",
+            "components": [
+              { "name": "to", "type": "address", "internalType": "address" },
+              { "name": "value", "type": "uint256", "internalType": "uint256" },
+              { "name": "data", "type": "bytes", "internalType": "bytes" }
+            ]
+          },
+          {
+            "name": "failureMap",
+            "type": "uint256",
+            "indexed": false,
+            "internalType": "uint256"
+          },
+          {
+            "name": "metadata",
+            "type": "string",
+            "indexed": false,
+            "internalType": "string"
+          },
+          {
+            "name": "executableFrom",
+            "type": "uint64",
+            "indexed": false,
+            "internalType": "uint64"
+          }
+        ],
+        "anonymous": false
+      },
+      {
+        "type": "event",
+        "name": "ActionExecuted",
+        "inputs": [
+          {
+            "name": "id",
+            "type": "uint32",
+            "indexed": true,
+            "internalType": "uint32"
+          },
+          {
+            "name": "dao",
+            "type": "address",
+            "indexed": true,
+            "internalType": "contract IDAO"
+          },
+          {
+            "name": "executor",
+            "type": "address",
+            "indexed": true,
+            "internalType": "address"
+          },
+          {
+            "name": "returnValues",
+            "type": "bytes[]",
+            "indexed": false,
+            "internalType": "bytes[]"
+          },
+          {
+            "name": "failureMap",
+            "type": "uint256",
+            "indexed": false,
+            "internalType": "uint256"
+          }
+        ],
+        "anonymous": false
+      },
+      {
+        "type": "event",
+        "name": "ActionRejected",
+        "inputs": [
+          {
+            "name": "id",
+            "type": "uint32",
+            "indexed": true,
+            "internalType": "uint32"
+          },
+          {
+            "name": "dao",
+            "type": "address",
+            "indexed": true,
+            "internalType": "contract IDAO"
+          },
+          {
+            "name": "metadata",
+            "type": "string",
+            "indexed": false,
+            "internalType": "string"
+          }
+        ],
+        "anonymous": false
+      },
+      {
+        "type": "event",
+        "name": "AdminSet",
+        "inputs": [
+          {
+            "name": "dao",
+            "type": "address",
+            "indexed": true,
+            "internalType": "contract IDAO"
+          },
+          {
+            "name": "admin",
+            "type": "address",
+            "indexed": false,
+            "internalType": "address"
+          }
+        ],
+        "anonymous": false
+      },
+      {
+        "type": "event",
+        "name": "ExecuteDelaySet",
+        "inputs": [
+          {
+            "name": "dao",
+            "type": "address",
+            "indexed": true,
+            "internalType": "contract IDAO"
+          },
+          {
+            "name": "executeDelay",
+            "type": "uint64",
+            "indexed": false,
+            "internalType": "uint64"
+          }
+        ],
+        "anonymous": false
+      },
+      { "type": "error", "name": "Overflow", "inputs": [] },
+      { "type": "error", "name": "RequestAlreadyExecuted", "inputs": [] },
+      { "type": "error", "name": "RequestDoesNotExist", "inputs": [] },
+      { "type": "error", "name": "RequestNotExecutableYet", "inputs": [] },
+      { "type": "error", "name": "SenderIsNotAdmin", "inputs": [] }
+    ],
+    "bytecode": "0x6080806040523461001657610f5a908161001c8239f35b600080fdfe608080604052600436101561001357600080fd5b60003560e01c90816301ffc9a714610d26575080632a9ce78b14610c7c5780639d1978e2146105aa578063c55b6bb71461051d578063c60194ef146101375763f4a523c51461006157600080fd5b346101325760403660031901126101325760043563ffffffff8116809103610132576024356001600160401b038111610132576100a2903690600401610d8f565b91903360005260006020526040600020805460e01c831015610120577f501eaa7d74d1af9b68a69b19872b2c224fce60bb1ce792b6fd42dcd35add7c4391600161011b928560005201602052604060002068ffffffffffffffff0080198254161790556040519182916020835233966020840191610eab565b0390a3005b604051637037cbb560e11b8152600490fd5b600080fd5b3461013257604036600319011261013257610150610d79565b6024359063ffffffff82168203610132576001600160a01b0381166000908152602081905260409020805460e01c63ffffffff841610156101205760019063ffffffff841660005201602052604060002090815460ff811661050b576001600160401b038160081c1642106104fa57600160ff198216178355600183015460038401549360405194859263dabdb38960e01b8452608484019060018060a01b0387166004860152602485015260806044850152600283015480915260a48401600260a48360051b87010194016000526020600020916000915b81831061041d5750505050606483015260009290829003908290849060ff191660011760481c6001600160a01b03165af1928315610411576000926000946102c7575b5060405133926001600160a01b03169163ffffffff16907f541b022fce588a99d41c70b8fb346dac2c36238eab28353e50a1eb6f12efcfd790806102b1888883610ddf565b0390a46102c360405192839283610ddf565b0390f35b925092503d91826000823e6102dc8382610ecc565b6040818481010312610132578051926001600160401b03841161013257808201601f8584010112156101325783820151936001600160401b0385116103fb578460051b91604051956103316020850188610ecc565b8652602086019080850160208585880101011161013257602083860101915b6020858588010101831061036e57505050505060200151928461026c565b82516001600160401b03811161013257828701603f82878a0101011215610132576020818689010101516001600160401b0381116103fb57604051926103be601f8301601f191660200185610ecc565b818452848901604083858a8d010101011161013257836103ee602095938b604088978c8980990193010101610dbc565b8152019301929050610350565b634e487b7160e01b600052604160045260246000fd5b6040513d6000823e3d90fd5b9193949092955060a319898203018252606060018060a01b038754168252600187015460208301526002870191816040820152600092805461045e81610e5a565b80948401526001811690816000146104d45750600114610494575b50505060206003600192970192019301909188959493610229565b909192506000526020600020916000925b8184106104bd57505001608001602060036001610479565b6001816020925460808787010152019301926104a5565b600195506080925060039391509360209460ff191683830152151560051b010192610479565b604051621005c760e91b8152600490fd5b604051636b78fca360e11b8152600490fd5b3461013257604036600319011261013257610536610d79565b6001600160a01b039060243582811691908290036101325781817fbf265e8326285a2747e33e54d5945f7111f2b5edb826eb8c08d4677779b3ff97938560209416958660005260008552610594604060002093845492831690610eed565b6001600160a01b031916179055604051908152a2005b346101325760a0366003190112610132576004356001600160a01b0381169003610132576001600160401b036044351161013257366023604435011215610132576001600160401b036044356004013511610132573660246044356004013560051b604435010111610132576001600160401b03608435116101325761063536608435600401610d8f565b9033600052600060205260406000209081549163ffffffff8360e01c14610c54576001600160e01b03831660e084811c600101901b6001600160e01b0319161781556001600160401b034211610c6a576001600160401b034281166001600160e01b03851660e086811c600101901b6001600160e01b0319161760a01c82160111610c54576001908360e01c60005201602052604060002080546901000000000000000000600160e81b0360043560481b169068ffffffffffffffff006001600160401b0363ffffffff60e01b60018860e01c0160e01b1660018060e01b0388161760a01c166001600160401b0342160160081b169060ff62ffffff60e81b01161717815560243560018201556801000000000000000060443560040135116103fb576002810180546004604435013591829055908111610b9a575b50602460443501600282016000526020600020906000905b60443560040135821061094a5750505060036064359101556040519260c0840160018060a01b03600435168552602435602086015260c0604086015260443560040135905260e084019160e06044356004013560051b860101926024604435019060005b60443560040135811061088b576040878961081989898960643560608601528483036080860152610eab565b906001600160401b038063ffffffff60e01b60018660e01c0160e01b1660018060e01b0386161760a01c168142160116918260a08301527fa21621f43862e8ffca9ac0f258385db445b8e07b7d55571ea0f4c22720ee74823392808660e01c930390a382519160e01c82526020820152f35b90919460df198882030183528535608219604435360301811215610132576044358101602401356001600160a01b0381168103610132576001600160a01b03168252604480358201908101356020840152368190036042190160649091013512156101325760443501606481013501906001600160401b036024830135116101325760248201353603604483011361013257602061093f600193606084816040869701520190604460248201359101610eab565b9701930191016107ed565b8035604435360360821901811215610132576044358101602401356001600160a01b03811681036101325784546001600160a01b0319166001600160a01b039190911617845560448035820190810135600186015536819003604219016064909101351215610132576001600160401b03604435820160648101350160240135116101325760448035820160648101350160248101353603910113610132576109f66002850154610e5a565b601f90818111610b4c575b506000906024606484604435010135846044350101013511600114610a8d57600192600392602092600090604435830160648101350160240135610a73575b506000196044359092016064810135016024013580861b9290921c191690851b1760028701555b01930191019091610789565b60449150606483833501013583833501010101358c610a40565b6002850160005260206000209060005b604435840160648101350160240135601f19168110610b28575060019360039360209391928692602492916044358301606481013501840135601f19811610610afc575b5050604435016064810135010135811b016002870155610a67565b604480358401606481013501918201013560001991850135891b60f8169190911c191690558d80610ae1565b60448035850160648101350183010135835560019092019160209182019101610a9d565b600286016000908152602090819020610b8b9260443586016064810135016024013580860160051c83019386929110610b91575b0160051c0190610e94565b89610a01565b92508192610b80565b6003818102048103610c54576003604435600401358102046044356004013503610c54576002820160005260206000206044356004013560030281015b8260030282018110610bea575050610771565b806000600392556000600182015560028101610c068154610e5a565b9081610c15575b505001610bd7565b600091601f808211600114610c2f575050555b8880610c0d565b91610c4d84929382845260208420940160051c840160018501610e94565b5555610c28565b634e487b7160e01b600052601160045260246000fd5b604051631a93c68960e11b8152600490fd5b3461013257604036600319011261013257610c95610d79565b602435906001600160401b03821690818303610132577f63708007dda8a9534c4427842aafe33b747b77ab2d3f1e98e08936ea7252440e9160209160018060a01b03808216958660005260008552610cf7604060002093845493841690610eed565b67ffffffffffffffff60a01b1990911660a09190911b67ffffffffffffffff60a01b16179055604051908152a2005b34610132576020366003190112610132576004359063ffffffff60e01b821680920361013257602091638521284360e01b8114908115610d68575b5015158152f35b6301ffc9a760e01b14905083610d61565b600435906001600160a01b038216820361013257565b9181601f84011215610132578235916001600160401b038311610132576020838186019501011161013257565b60005b838110610dcf5750506000910152565b8181015183820152602001610dbf565b929190604084016040855281518091526060850160608260051b870101916020809401916000905b85838310610e19575050505050930152565b808060019394959697605f198d82030186528851610e4281518092818552858086019101610dbc565b601f01601f1916010196019493919091019101610e07565b90600182811c92168015610e8a575b6020831014610e7457565b634e487b7160e01b600052602260045260246000fd5b91607f1691610e69565b818110610e9f575050565b60008155600101610e94565b908060209392818452848401376000828201840152601f01601f1916010190565b90601f801991011681019081106001600160401b038211176103fb57604052565b6001600160a01b0391821680610f195750163303610f0757565b604051636587b01b60e11b8152600490fd5b9150503303610f075756fea2646970667358221220e51a2d1f77834d0112a26deb64111addc89faa8ffdef2de6c86450a38cd0253864736f6c63430008170033",
+    "compiler": { "version": "v0.8.23+commit.f704f362" },
+    "contractName": "src/OptimisticActions.sol:OptimisticActions",
+    "license": "MIT",
+    "jsonDescription": {
+      "language": "Solidity",
+      "sources": {
+        "lib/ens-reverse-claimable/src/ENSReverseClaimable.sol": {
+          "content": "// SPDX-License-Identifier: MIT\npragma solidity ^0.8.0;\n\nabstract contract ENSReverseClaimable {\n    /// @notice ENS reverse name resolution is claimable by the owner of the contract.\n    function owner() external pure virtual returns (address) {\n        return 0x2309762aAcA0a8F689463a42c0A6A84BE3A7ea51; // plopmenz.eth\n    }\n}\n"
+        },
+        "lib/openzeppelin-contracts/contracts/utils/introspection/ERC165.sol": {
+          "content": "// SPDX-License-Identifier: MIT\n// OpenZeppelin Contracts (last updated v5.0.0) (utils/introspection/ERC165.sol)\n\npragma solidity ^0.8.20;\n\nimport {IERC165} from \"./IERC165.sol\";\n\n/**\n * @dev Implementation of the {IERC165} interface.\n *\n * Contracts that want to implement ERC-165 should inherit from this contract and override {supportsInterface} to check\n * for the additional interface id that will be supported. For example:\n *\n * ```solidity\n * function supportsInterface(bytes4 interfaceId) public view virtual override returns (bool) {\n *     return interfaceId == type(MyInterface).interfaceId || super.supportsInterface(interfaceId);\n * }\n * ```\n */\nabstract contract ERC165 is IERC165 {\n    /**\n     * @dev See {IERC165-supportsInterface}.\n     */\n    function supportsInterface(bytes4 interfaceId) public view virtual returns (bool) {\n        return interfaceId == type(IERC165).interfaceId;\n    }\n}\n"
+        },
+        "lib/openzeppelin-contracts/contracts/utils/introspection/IERC165.sol": {
+          "content": "// SPDX-License-Identifier: MIT\n// OpenZeppelin Contracts (last updated v5.0.0) (utils/introspection/IERC165.sol)\n\npragma solidity ^0.8.20;\n\n/**\n * @dev Interface of the ERC-165 standard, as defined in the\n * https://eips.ethereum.org/EIPS/eip-165[ERC].\n *\n * Implementers can declare support of contract interfaces, which can then be\n * queried by others ({ERC165Checker}).\n *\n * For an implementation, see {ERC165}.\n */\ninterface IERC165 {\n    /**\n     * @dev Returns true if this contract implements the interface defined by\n     * `interfaceId`. See the corresponding\n     * https://eips.ethereum.org/EIPS/eip-165#how-interfaces-are-identified[ERC section]\n     * to learn more about how these ids are created.\n     *\n     * This function call must use less than 30 000 gas.\n     */\n    function supportsInterface(bytes4 interfaceId) external view returns (bool);\n}\n"
+        },
+        "lib/trustless-management/lib/osx-commons/contracts/src/dao/IDAO.sol": {
+          "content": "// SPDX-License-Identifier: AGPL-3.0-or-later\n\npragma solidity ^0.8.8;\n\n/// @title IDAO\n/// @author Aragon Association - 2022-2023\n/// @notice The interface required for DAOs within the Aragon App DAO framework.\n/// @custom:security-contact sirt@aragon.org\ninterface IDAO {\n    /// @notice The action struct to be consumed by the DAO's `execute` function resulting in an external call.\n    /// @param to The address to call.\n    /// @param value The native token value to be sent with the call.\n    /// @param data The bytes-encoded function selector and calldata for the call.\n    struct Action {\n        address to;\n        uint256 value;\n        bytes data;\n    }\n\n    /// @notice Checks if an address has permission on a contract via a permission identifier and considers if `ANY_ADDRESS` was used in the granting process.\n    /// @param _where The address of the contract.\n    /// @param _who The address of a EOA or contract to give the permissions.\n    /// @param _permissionId The permission identifier.\n    /// @param _data The optional data passed to the `PermissionCondition` registered.\n    /// @return Returns true if the address has permission, false if not.\n    function hasPermission(\n        address _where,\n        address _who,\n        bytes32 _permissionId,\n        bytes memory _data\n    ) external view returns (bool);\n\n    /// @notice Updates the DAO metadata (e.g., an IPFS hash).\n    /// @param _metadata The IPFS hash of the new metadata object.\n    function setMetadata(bytes calldata _metadata) external;\n\n    /// @notice Emitted when the DAO metadata is updated.\n    /// @param metadata The IPFS hash of the new metadata object.\n    event MetadataSet(bytes metadata);\n\n    /// @notice Executes a list of actions. If a zero allow-failure map is provided, a failing action reverts the entire execution. If a non-zero allow-failure map is provided, allowed actions can fail without the entire call being reverted.\n    /// @param _callId The ID of the call. The definition of the value of `callId` is up to the calling contract and can be used, e.g., as a nonce.\n    /// @param _actions The array of actions.\n    /// @param _allowFailureMap A bitmap allowing execution to succeed, even if individual actions might revert. If the bit at index `i` is 1, the execution succeeds even if the `i`th action reverts. A failure map value of 0 requires every action to not revert.\n    /// @return The array of results obtained from the executed actions in `bytes`.\n    /// @return The resulting failure map containing the actions have actually failed.\n    function execute(\n        bytes32 _callId,\n        Action[] memory _actions,\n        uint256 _allowFailureMap\n    ) external returns (bytes[] memory, uint256);\n\n    /// @notice Emitted when a proposal is executed.\n    /// @param actor The address of the caller.\n    /// @param callId The ID of the call.\n    /// @param actions The array of actions executed.\n    /// @param allowFailureMap The allow failure map encoding which actions are allowed to fail.\n    /// @param failureMap The failure map encoding which actions have failed.\n    /// @param execResults The array with the results of the executed actions.\n    /// @dev The value of `callId` is defined by the component/contract calling the execute function. A `Plugin` implementation can use it, for example, as a nonce.\n    event Executed(\n        address indexed actor,\n        bytes32 callId,\n        Action[] actions,\n        uint256 allowFailureMap,\n        uint256 failureMap,\n        bytes[] execResults\n    );\n\n    /// @notice Emitted when a standard callback is registered.\n    /// @param interfaceId The ID of the interface.\n    /// @param callbackSelector The selector of the callback function.\n    /// @param magicNumber The magic number to be registered for the callback function selector.\n    event StandardCallbackRegistered(\n        bytes4 interfaceId,\n        bytes4 callbackSelector,\n        bytes4 magicNumber\n    );\n\n    /// @notice Deposits (native) tokens to the DAO contract with a reference string.\n    /// @param _token The address of the token or address(0) in case of the native token.\n    /// @param _amount The amount of tokens to deposit.\n    /// @param _reference The reference describing the deposit reason.\n    function deposit(address _token, uint256 _amount, string calldata _reference) external payable;\n\n    /// @notice Emitted when a token deposit has been made to the DAO.\n    /// @param sender The address of the sender.\n    /// @param token The address of the deposited token.\n    /// @param amount The amount of tokens deposited.\n    /// @param _reference The reference describing the deposit reason.\n    event Deposited(\n        address indexed sender,\n        address indexed token,\n        uint256 amount,\n        string _reference\n    );\n\n    /// @notice Emitted when a native token deposit has been made to the DAO.\n    /// @dev This event is intended to be emitted in the `receive` function and is therefore bound by the gas limitations for `send`/`transfer` calls introduced by [ERC-2929](https://eips.ethereum.org/EIPS/eip-2929).\n    /// @param sender The address of the sender.\n    /// @param amount The amount of native tokens deposited.\n    event NativeTokenDeposited(address sender, uint256 amount);\n\n    /// @notice Setter for the trusted forwarder verifying the meta transaction.\n    /// @param _trustedForwarder The trusted forwarder address.\n    function setTrustedForwarder(address _trustedForwarder) external;\n\n    /// @notice Getter for the trusted forwarder verifying the meta transaction.\n    /// @return The trusted forwarder address.\n    function getTrustedForwarder() external view returns (address);\n\n    /// @notice Emitted when a new TrustedForwarder is set on the DAO.\n    /// @param forwarder the new forwarder address.\n    event TrustedForwarderSet(address forwarder);\n\n    /// @notice Checks whether a signature is valid for a provided hash according to [ERC-1271](https://eips.ethereum.org/EIPS/eip-1271).\n    /// @param _hash The hash of the data to be signed.\n    /// @param _signature The signature byte array associated with `_hash`.\n    /// @return Returns the `bytes4` magic value `0x1626ba7e` if the signature is valid and `0xffffffff` if not.\n    function isValidSignature(bytes32 _hash, bytes memory _signature) external returns (bytes4);\n\n    /// @notice Registers an ERC standard having a callback by registering its [ERC-165](https://eips.ethereum.org/EIPS/eip-165) interface ID and callback function signature.\n    /// @param _interfaceId The ID of the interface.\n    /// @param _callbackSelector The selector of the callback function.\n    /// @param _magicNumber The magic number to be registered for the function signature.\n    function registerStandardCallback(\n        bytes4 _interfaceId,\n        bytes4 _callbackSelector,\n        bytes4 _magicNumber\n    ) external;\n\n    /// @notice Removed function being left here to not corrupt the IDAO interface ID. Any call will revert.\n    /// @dev Introduced in v1.0.0. Removed in v1.4.0.\n    function setSignatureValidator(address) external;\n}\n"
+        },
+        "lib/trustless-management/src/IDAOExtensionWithAdmin.sol": {
+          "content": "// SPDX-License-Identifier: MIT\npragma solidity ^0.8.0;\n\nimport {IDAO} from \"../lib/osx-commons/contracts/src/dao/IDAO.sol\";\n\ninterface IDAOExtensionWithAdmin {\n    error SenderIsNotAdmin();\n\n    event AdminSet(IDAO indexed dao, address admin);\n\n    /// @notice Registers or updates the admin of a DAO. The admin has the permission to change permissions.\n    /// @param _dao The DAO this admin will control.\n    /// @param _admin The address that will control the DAO.\n    /// @dev If no admin is set, this can only be called by the DAO itself. When an admin is set, only the existing admin can update.\n    function setAdmin(IDAO _dao, address _admin) external;\n}\n"
+        },
+        "lib/trustless-management/src/IDAOManager.sol": {
+          "content": "// SPDX-License-Identifier: MIT\npragma solidity ^0.8.0;\n\nimport {IDAOExtensionWithAdmin, IDAO} from \"./IDAOExtensionWithAdmin.sol\";\n\ninterface IDAOManager is IDAOExtensionWithAdmin {\n    error AccessDenied();\n\n    event Execution(\n        IDAO indexed dao,\n        uint256 indexed role,\n        address indexed sender,\n        IDAO.Action[] actions,\n        bytes[] returnValues,\n        uint256 failureMap\n    );\n\n    /// @notice Executes a list of actions as the DAO.\n    /// @param _dao Which DAO should execute the actions.\n    /// @param _role The role to use for validation if execution is allowed.\n    /// @param _actions The actions to execute.\n    /// @param _failureMap Which actions are allowed to fail without reverting the whole transaction.\n    /// @dev Only a single role means that a user satisfies multiple roles they might need to split their actions into multiple batches (one per role).\n    function asDAO(IDAO _dao, uint256 _role, IDAO.Action[] calldata _actions, uint256 _failureMap)\n        external\n        returns (bytes[] memory returnValues, uint256 failureMap);\n}\n"
+        },
+        "src/IOptimisticActions.sol": {
+          "content": "// SPDX-License-Identifier: MIT\npragma solidity ^0.8.0;\n\nimport {IDAOExtensionWithAdmin, IDAO} from \"../lib/trustless-management/src/IDAOExtensionWithAdmin.sol\";\nimport {IDAOManager} from \"../lib/trustless-management/src/IDAOManager.sol\";\n\ninterface IOptimisticActions is IDAOExtensionWithAdmin {\n    error RequestDoesNotExist();\n    error RequestNotExecutableYet();\n    error RequestAlreadyExecuted();\n\n    event ActionCreated(\n        uint32 indexed id,\n        IDAO indexed dao,\n        IDAOManager manager,\n        uint256 role,\n        IDAO.Action[] actions,\n        uint256 failureMap,\n        string metadata,\n        uint64 executableFrom\n    );\n    event ActionRejected(uint32 indexed id, IDAO indexed dao, string metadata);\n    event ActionExecuted(\n        uint32 indexed id, IDAO indexed dao, address indexed executor, bytes[] returnValues, uint256 failureMap\n    );\n\n    event ExecuteDelaySet(IDAO indexed dao, uint64 executeDelay);\n\n    /// @notice A container for all info related to a certain DAO.\n    /// @param admin The address that can change the settings for this DAO. Default address(0) means the DAO itself.\n    /// @param executeDelay How long actions need to wait before they become executable (if not rejected before).\n    /// @param requestCount How many proposed actions have been created.\n    /// @param actionRequests The proposed actions to be executed.\n    struct DAOInfo {\n        address admin;\n        uint64 executeDelay;\n        uint32 requestCount;\n        mapping(uint32 id => ActionRequest request) actionRequests;\n    }\n\n    /// @notice A container for all info related to an execute action request.\n    /// @param executed If the action has been executed.\n    /// @param executableFrom From what block time the request becomes executable.\n    /// @param manager The management contract to use for the execution.\n    /// @param role The role to use for the execution.\n    /// @param actions The actions to execute.\n    /// @param failureMap Which actions are allowed to fail without reverting the transaction.\n    struct ActionRequest {\n        bool executed;\n        uint64 executableFrom;\n        IDAOManager manager;\n        uint256 role;\n        IDAO.Action[] actions;\n        uint256 failureMap;\n    }\n\n    /// @notice Creates a request to execute certain actions. The sender should be the DAO (utilizing a management solution).\n    /// @param _manager The management contract to use for performing the actions.\n    /// @param _role The role of the management contract to use for performing the actions.\n    /// @param _actions The actions that are proposed to be executed.\n    /// @param _failureMap The actions that are allowed to be revert.\n    /// @param _metadata Additional info from the creator.\n    function createAction(\n        IDAOManager _manager,\n        uint256 _role,\n        IDAO.Action[] calldata _actions,\n        uint256 _failureMap,\n        string calldata _metadata\n    ) external returns (uint32 id, uint64 executableFrom);\n\n    /// @notice Rejects a certain action request. The sender should be the DAO (utilizing a management solution).\n    /// @param _id The id of the request.\n    /// @param _metadata Additional info from the rejector.\n    function rejectAction(uint32 _id, string calldata _metadata) external;\n\n    /// @notice Executes a certain action request.\n    /// @param _dao The DAO that has the request.\n    /// @param _id The id of the request.\n    /// @dev This is only possible if the request has not been executed yet and the block time is past the executableFrom date.\n    function executeAction(IDAO _dao, uint32 _id) external returns (bytes[] memory returnValues, uint256 failureMap);\n\n    /// @notice Changes the execute delay of a DAO.\n    /// @param _dao The DAO to change the settings of.\n    /// @param _executeDelay The new execute delay.\n    /// @dev By default this value is 0, meaning there is no delay. This is likely not desired so you are recommened to set the delay before granting this contract any permissions.\n    function setExecuteDelay(IDAO _dao, uint64 _executeDelay) external;\n}\n"
+        },
+        "src/OptimisticActions.sol": {
+          "content": "// SPDX-License-Identifier: MIT\npragma solidity ^0.8.0;\n\nimport {ERC165} from \"../lib/openzeppelin-contracts/contracts/utils/introspection/ERC165.sol\";\nimport {ENSReverseClaimable} from \"../lib/ens-reverse-claimable/src/ENSReverseClaimable.sol\";\n\nimport {IOptimisticActions, IDAO, IDAOManager, IDAOExtensionWithAdmin} from \"./IOptimisticActions.sol\";\n\ncontract OptimisticActions is ERC165, IOptimisticActions {\n    mapping(IDAO dao => DAOInfo info) private daoInfo;\n\n    /// @inheritdoc ERC165\n    function supportsInterface(bytes4 _interfaceId) public view virtual override returns (bool) {\n        return _interfaceId == type(IOptimisticActions).interfaceId || super.supportsInterface(_interfaceId);\n    }\n\n    /// @inheritdoc IOptimisticActions\n    function createAction(\n        IDAOManager _manager,\n        uint256 _role,\n        IDAO.Action[] calldata _actions,\n        uint256 _failureMap,\n        string calldata _metadata\n    ) external returns (uint32 id, uint64 executableFrom) {\n        DAOInfo storage info = daoInfo[IDAO(msg.sender)];\n        id = info.requestCount++;\n        executableFrom = _toUint64(block.timestamp) + info.executeDelay;\n\n        ActionRequest storage request = info.actionRequests[id];\n        // executed = false (default value)\n        request.executableFrom = executableFrom;\n        request.manager = _manager;\n        request.role = _role;\n        request.actions = _actions;\n        request.failureMap = _failureMap;\n        emit ActionCreated(id, IDAO(msg.sender), _manager, _role, _actions, _failureMap, _metadata, executableFrom);\n    }\n\n    /// @inheritdoc IOptimisticActions\n    function rejectAction(uint32 _id, string calldata _metadata) external {\n        DAOInfo storage info = daoInfo[IDAO(msg.sender)];\n        if (_id >= info.requestCount) {\n            revert RequestDoesNotExist();\n        }\n\n        // Becomes executable in the year 584_554_051_223 (kudos if this smart contract is still used at that time)\n        info.actionRequests[_id].executableFrom = type(uint64).max;\n        emit ActionRejected(_id, IDAO(msg.sender), _metadata);\n    }\n\n    /// @inheritdoc IOptimisticActions\n    function executeAction(IDAO _dao, uint32 _id) external returns (bytes[] memory returnValues, uint256 failureMap) {\n        DAOInfo storage info = daoInfo[_dao];\n        if (_id >= info.requestCount) {\n            revert RequestDoesNotExist();\n        }\n\n        ActionRequest storage request = info.actionRequests[_id];\n        if (request.executed) {\n            revert RequestAlreadyExecuted();\n        }\n        if (block.timestamp < request.executableFrom) {\n            revert RequestNotExecutableYet();\n        }\n\n        request.executed = true;\n        (returnValues, failureMap) = request.manager.asDAO(_dao, request.role, request.actions, request.failureMap);\n        emit ActionExecuted(_id, _dao, msg.sender, returnValues, failureMap);\n    }\n\n    /// @inheritdoc IOptimisticActions\n    function setExecuteDelay(IDAO _dao, uint64 _executeDelay) external {\n        DAOInfo storage info = daoInfo[_dao];\n        _ensureSenderIsAdmin(_dao, info.admin);\n\n        info.executeDelay = _executeDelay;\n        emit ExecuteDelaySet(_dao, _executeDelay);\n    }\n\n    /// @inheritdoc IDAOExtensionWithAdmin\n    function setAdmin(IDAO _dao, address _admin) external {\n        DAOInfo storage info = daoInfo[_dao];\n        _ensureSenderIsAdmin(_dao, info.admin);\n        info.admin = _admin;\n        emit AdminSet(_dao, _admin);\n    }\n\n    function _ensureSenderIsAdmin(IDAO _dao, address _admin) internal view {\n        if (_admin == address(0)) {\n            // Admin not set means DAO is the admin\n            if (msg.sender != address(_dao)) {\n                revert SenderIsNotAdmin();\n            }\n        } else {\n            // Specific admin will only be allowed. DAO is not allowed to change permissions. (for example: if it is a SubDAO)\n            if (msg.sender != _admin) {\n                revert SenderIsNotAdmin();\n            }\n        }\n    }\n\n    error Overflow();\n\n    function _toUint64(uint256 value) internal pure returns (uint64) {\n        if (value > type(uint64).max) {\n            revert Overflow();\n        }\n        return uint64(value);\n    }\n}\n"
+        }
+      },
+      "settings": {
+        "optimizer": { "enabled": true, "runs": 200 },
+        "remappings": [
+          "@openzeppelin/contracts/=lib/openzeppelin-contracts/contracts/",
+          "ds-test/=lib/forge-std/lib/ds-test/src/",
+          "ens-reverse-claimable/=lib/ens-reverse-claimable/src/",
+          "erc4626-tests/=lib/openzeppelin-contracts/lib/erc4626-tests/",
+          "forge-std/=lib/forge-std/src/",
+          "openzeppelin-contracts/=lib/openzeppelin-contracts/",
+          "osx-commons/=lib/trustless-management/lib/osx-commons/",
+          "tag-manager/=lib/trustless-management/lib/tag-manager/src/",
+          "trustless-management/=lib/trustless-management/src/"
+        ],
+        "viaIR": true
+      },
+      "evmVersion": "paris",
+      "metadata": { "useLiteralContent": true }
+    }
+  },
+  "source": "/home/plopmenz/optimistic-actions",
+  "submitted": {
+    "transactionHash": "0x677533daf1fe785e735b27316075eaaca645014a07c0387d23da4d7eeb0cef0f",
+    "date": "2024-02-19T13:40:01.670Z"
+  }
+}
