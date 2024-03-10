@@ -1,7 +1,13 @@
-import { Address, DeployInfo, Deployer } from "../web3webdeploy/types";
+import { Address, Deployer } from "../web3webdeploy/types";
+import {
+  DeployOptimisticActionsSettings,
+  deployOptimsticActions,
+} from "./optimistic-actions/OptimsticActions";
 
-export interface OptimisticActionsDeploymentSettings
-  extends Omit<DeployInfo, "contract" | "args"> {}
+export interface OptimisticActionsDeploymentSettings {
+  optimisticActionsSettings: DeployOptimisticActionsSettings;
+  forceRedeploy?: boolean;
+}
 
 export interface OptimisticActionsDeployment {
   optimisticActions: Address;
@@ -11,11 +17,14 @@ export async function deploy(
   deployer: Deployer,
   settings?: OptimisticActionsDeploymentSettings
 ): Promise<OptimisticActionsDeployment> {
-  const optimisticActions = await deployer.deploy({
-    id: "OptimisticActions",
-    contract: "OptimisticActions",
-    ...settings,
-  });
+  if (settings?.forceRedeploy !== undefined && !settings.forceRedeploy) {
+    return await deployer.loadDeployment({ deploymentName: "latest.json" });
+  }
+
+  const optimisticActions = await deployOptimsticActions(
+    deployer,
+    settings?.optimisticActionsSettings ?? {}
+  );
 
   const deployment = {
     optimisticActions: optimisticActions,
