@@ -2,7 +2,7 @@ import { Address, Deployer } from "../web3webdeploy/types";
 import {
   DeployOptimisticActionsSettings,
   deployOptimsticActions,
-} from "./optimistic-actions/OptimsticActions";
+} from "./internal/OptimsticActions";
 
 export interface OptimisticActionsDeploymentSettings {
   optimisticActionsSettings: DeployOptimisticActionsSettings;
