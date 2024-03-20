@@ -3,7 +3,7 @@ import { Address, DeployInfo, Deployer } from "../../web3webdeploy/types";
 export interface DeployOptimisticActionsSettings
   extends Omit<DeployInfo, "contract" | "args"> {}
 
-export async function deployOptimsticActions(
+export async function deployOptimisticActions(
   deployer: Deployer,
   settings: DeployOptimisticActionsSettings
 ): Promise<Address> {

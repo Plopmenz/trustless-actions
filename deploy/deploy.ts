@@ -1,8 +1,8 @@
 import { Address, Deployer } from "../web3webdeploy/types";
 import {
   DeployOptimisticActionsSettings,
-  deployOptimsticActions,
-} from "./internal/OptimsticActions";
+  deployOptimisticActions,
+} from "./internal/OptimisticActions";
 
 export interface OptimisticActionsDeploymentSettings {
   optimisticActionsSettings: DeployOptimisticActionsSettings;
@@ -21,7 +21,7 @@ export async function deploy(
     return await deployer.loadDeployment({ deploymentName: "latest.json" });
   }
 
-  const optimisticActions = await deployOptimsticActions(
+  const optimisticActions = await deployOptimisticActions(
     deployer,
     settings?.optimisticActionsSettings ?? {}
   );
