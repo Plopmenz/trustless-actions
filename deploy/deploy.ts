@@ -3,20 +3,25 @@ import {
   DeployOptimisticActionsSettings,
   deployOptimisticActions,
 } from "./internal/OptimisticActions";
+import {
+  DeployPessimisticActionsSettings,
+  deployPessimisticActions,
+} from "./internal/PessimisticActions";
 
-export interface OptimisticActionsDeploymentSettings {
+export interface TrustlessActionsDeploymentSettings {
   optimisticActionsSettings: DeployOptimisticActionsSettings;
+  pessimisticActionsSettings: DeployPessimisticActionsSettings;
   forceRedeploy?: boolean;
 }
 
-export interface OptimisticActionsDeployment {
+export interface TrustlessActionsDeployment {
   optimisticActions: Address;
 }
 
 export async function deploy(
   deployer: Deployer,
-  settings?: OptimisticActionsDeploymentSettings
-): Promise<OptimisticActionsDeployment> {
+  settings?: TrustlessActionsDeploymentSettings
+): Promise<TrustlessActionsDeployment> {
   if (settings?.forceRedeploy !== undefined && !settings.forceRedeploy) {
     return await deployer.loadDeployment({ deploymentName: "latest.json" });
   }
@@ -26,8 +31,14 @@ export async function deploy(
     settings?.optimisticActionsSettings ?? {}
   );
 
+  const pessimisticActions = await deployPessimisticActions(
+    deployer,
+    settings?.pessimisticActionsSettings ?? {}
+  );
+
   const deployment = {
     optimisticActions: optimisticActions,
+    pessimisticActions: pessimisticActions,
   };
   await deployer.saveDeployment({
     deploymentName: "latest.json",

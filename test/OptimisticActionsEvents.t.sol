@@ -27,60 +27,33 @@ contract OptimisticActionsTest is Test {
     }
 
     /// forge-config: default.fuzz.runs = 10
-    function test_createAction(IDAO.Action[] calldata _actions, uint256 _failureMap, string calldata _metadata)
-        external
-    {
+    function test_createAction(
+        IDAO.Action[] calldata _actions,
+        uint256 _failureMap,
+        string calldata _metadata,
+        uint32 _executeDelay
+    ) external {
+        optimisticActions.setExecuteDelay(dao, _executeDelay);
         vm.expectEmit(address(optimisticActions));
-        // This has assumption first task will have id 0 and the executionDelay is 0
-        emit IOptimisticActions.ActionCreated(
-            0, dao, trustlessManagement, role, _actions, _failureMap, _metadata, uint64(block.timestamp)
-        );
+        // This has assumption that the executionDelay is 0
+        emit IOptimisticActions.OptimisticActionCreated(0, dao, uint64(block.timestamp) + _executeDelay);
         optimisticActions.createAction(trustlessManagement, role, _actions, _failureMap, _metadata);
     }
 
     /// forge-config: default.fuzz.runs = 10
     function test_rejectAction(string calldata _metadata) external {
         IDAO.Action[] memory actions = new IDAO.Action[](0);
-        (uint32 id,) = optimisticActions.createAction(trustlessManagement, role, actions, 0, _metadata);
+        uint32 id = optimisticActions.createAction(trustlessManagement, role, actions, 0, _metadata);
 
         vm.expectEmit(address(optimisticActions));
-        emit IOptimisticActions.ActionRejected(id, dao, _metadata);
+        emit IOptimisticActions.OptimisticActionRejected(id, dao, _metadata);
         optimisticActions.rejectAction(id, _metadata);
-    }
-
-    /// forge-config: default.fuzz.runs = 10
-    function test_executeAction(
-        uint256[] calldata _callableIndexes,
-        bytes[] calldata _calldatas,
-        bytes[] calldata _returnValues,
-        uint256 _failureMap,
-        address _executor
-    ) external {
-        vm.assume(_calldatas.length >= _callableIndexes.length);
-        vm.assume(_returnValues.length >= _callableIndexes.length);
-        ActionHelper actionHelper = new ActionHelper(_callableIndexes, _calldatas, _returnValues);
-        vm.assume(actionHelper.isValid());
-
-        IDAO.Action[] memory actions = actionHelper.getActions();
-        (uint32 id, uint64 executableFrom) =
-            optimisticActions.createAction(trustlessManagement, role, actions, _failureMap, "");
-        vm.warp(executableFrom);
-        bytes[] memory shortendReturnValues = new bytes[](actions.length);
-        for (uint256 i; i < shortendReturnValues.length; i++) {
-            shortendReturnValues[i] = _returnValues[i];
-        }
-
-        vm.stopPrank();
-        vm.prank(_executor);
-        vm.expectEmit(address(optimisticActions));
-        emit IOptimisticActions.ActionExecuted(id, dao, _executor, shortendReturnValues, 0);
-        optimisticActions.executeAction(dao, id);
     }
 
     /// forge-config: default.fuzz.runs = 10
     function test_setExecuteDelay(uint64 _executeDelay) external {
         vm.expectEmit(address(optimisticActions));
-        emit IOptimisticActions.ExecuteDelaySet(dao, _executeDelay);
+        emit IOptimisticActions.OptimisticExecuteDelaySet(dao, _executeDelay);
         optimisticActions.setExecuteDelay(dao, _executeDelay);
     }
 

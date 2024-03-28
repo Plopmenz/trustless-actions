@@ -20,8 +20,9 @@ contract OptimisticActionsTest is Test {
     error SenderIsNotAdmin();
 
     error RequestDoesNotExist();
-    error RequestNotExecutableYet();
     error RequestAlreadyExecuted();
+
+    error OptimisticRequestNotExecutableYet();
 
     function setUp() external {
         dao = new DAOMock();
@@ -32,73 +33,31 @@ contract OptimisticActionsTest is Test {
         trustlessManagement.changeFullAccess(dao, role, NO_PERMISSION_CHECKER);
     }
 
-    function test_execution(
-        uint256[] calldata _callableIndexes,
-        bytes[] calldata _calldatas,
-        bytes[] calldata _returnValues,
-        uint256 _failureMap
-    ) external {
-        vm.assume(_calldatas.length >= _callableIndexes.length);
-        vm.assume(_returnValues.length >= _callableIndexes.length);
-        ActionHelper actionHelper = new ActionHelper(_callableIndexes, _calldatas, _returnValues);
-        vm.assume(actionHelper.isValid());
-
-        IDAO.Action[] memory actions = actionHelper.getActions();
-        (uint32 id, uint64 executableFrom) =
-            optimisticActions.createAction(trustlessManagement, role, actions, _failureMap, "");
-        vm.warp(executableFrom);
-        bytes[] memory shortendReturnValues = new bytes[](actions.length);
-        for (uint256 i; i < shortendReturnValues.length; i++) {
-            shortendReturnValues[i] = _returnValues[i];
-        }
-
-        (bytes[] memory returnValues, uint256 failureMap) = optimisticActions.executeAction(dao, id);
-        assertEq(abi.encode(returnValues), abi.encode(shortendReturnValues));
-        assertEq(failureMap, 0); // No failed actions
-    }
-
     function test_rejected() external {
         IDAO.Action[] memory actions = new IDAO.Action[](0);
-        (uint32 id, uint64 executableFrom) = optimisticActions.createAction(trustlessManagement, role, actions, 0, "");
-        vm.warp(executableFrom);
+        uint32 id = optimisticActions.createAction(trustlessManagement, role, actions, 0, "");
 
         optimisticActions.rejectAction(id, "");
 
-        vm.expectRevert(RequestNotExecutableYet.selector); // Based on the current implementation, just to make sure it does not throw an unexpected revert
+        vm.expectRevert(OptimisticRequestNotExecutableYet.selector); // Based on the current implementation, just to make sure it does not throw an unexpected revert
         optimisticActions.executeAction(dao, id);
     }
 
-    function test_earlyExecution(uint64 early) external {
-        IDAO.Action[] memory actions = new IDAO.Action[](0);
-        (uint32 id, uint64 executableFrom) = optimisticActions.createAction(trustlessManagement, role, actions, 0, "");
-        vm.assume(early <= executableFrom);
-        vm.warp(executableFrom - early);
+    function test_earlyExecution(uint32 _executeDelay, uint32 _early) external {
+        vm.assume(_executeDelay > _early);
+        optimisticActions.setExecuteDelay(dao, _executeDelay);
 
-        if (early > 0) {
-            vm.expectRevert(RequestNotExecutableYet.selector);
+        IDAO.Action[] memory actions = new IDAO.Action[](0);
+        uint32 id = optimisticActions.createAction(trustlessManagement, role, actions, 0, "");
+        vm.warp(block.timestamp + _executeDelay - _early);
+
+        if (_early > 0) {
+            vm.expectRevert(OptimisticRequestNotExecutableYet.selector);
         }
         optimisticActions.executeAction(dao, id);
     }
 
-    function test_doubleExecution() external {
-        IDAO.Action[] memory actions = new IDAO.Action[](0);
-        (uint32 id, uint64 executableFrom) = optimisticActions.createAction(trustlessManagement, role, actions, 0, "");
-        vm.warp(executableFrom);
-
-        optimisticActions.executeAction(dao, id);
-        vm.expectRevert(RequestAlreadyExecuted.selector);
-        optimisticActions.executeAction(dao, id);
-    }
-
-    function test_nonExistent(uint32 id) external {
-        vm.expectRevert(RequestDoesNotExist.selector);
-        optimisticActions.rejectAction(id, "");
-
-        vm.expectRevert(RequestDoesNotExist.selector);
-        optimisticActions.executeAction(dao, id);
-    }
-
-    function test_noAdmin(uint64 _executeDelay, address _admin) external {
+    function test_noAdmin(uint32 _executeDelay, address _admin) external {
         vm.stopPrank();
 
         vm.expectRevert(SenderIsNotAdmin.selector);
@@ -106,15 +65,6 @@ contract OptimisticActionsTest is Test {
 
         vm.expectRevert(SenderIsNotAdmin.selector);
         optimisticActions.setAdmin(dao, _admin);
-    }
-
-    function test_executeDelay(uint64 _executeDelay) external {
-        vm.assume(block.timestamp + _executeDelay < type(uint64).max); // Otherwise overflow
-        optimisticActions.setExecuteDelay(dao, _executeDelay);
-
-        IDAO.Action[] memory actions = new IDAO.Action[](0);
-        (, uint64 executableFrom) = optimisticActions.createAction(trustlessManagement, role, actions, 0, "");
-        assertEq(executableFrom, block.timestamp + _executeDelay);
     }
 
     function test_interfaces() external view {
