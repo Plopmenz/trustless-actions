@@ -15,6 +15,11 @@ abstract contract TrustlessActions is ERC165, ENSReverseClaimable, ITrustlessAct
     }
 
     /// @inheritdoc ITrustlessActions
+    function getAction(IDAO _dao, uint32 _id) external view override returns (ActionRequest memory request) {
+        return daoRequests[_dao].getRequest[_id];
+    }
+
+    /// @inheritdoc ITrustlessActions
     function createAction(
         IDAOManager _manager,
         uint256 _role,

@@ -25,6 +25,11 @@ interface IOptimisticActions is ITrustlessActions, IDAOExtensionWithAdmin {
         uint64 executableFrom;
     }
 
+    /// @notice Gets a certain optimstic action request.
+    /// @param _dao The DAO that has the request.
+    /// @param _id The id of the request.
+    function getOptimsticAction(IDAO _dao, uint32 _id) external view returns (OptimisticActionRequest memory request);
+
     /// @notice Rejects a certain action request. The sender should be the DAO (utilizing a management solution).
     /// @param _id The id of the request.
     /// @param _metadata Additional info from the rejector.

@@ -42,6 +42,11 @@ interface ITrustlessActions {
         uint256 failureMap;
     }
 
+    /// @notice Gets a certain action request.
+    /// @param _dao The DAO that has the request.
+    /// @param _id The id of the request.
+    function getAction(IDAO _dao, uint32 _id) external view returns (ActionRequest memory request);
+
     /// @notice Creates a request to execute certain actions.
     /// @param _manager The management contract to use for performing the actions.
     /// @param _role The role of the management contract to use for performing the actions.

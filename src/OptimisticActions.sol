@@ -15,6 +15,11 @@ contract OptimisticActions is TrustlessActions, IOptimisticActions {
         return _interfaceId == type(IOptimisticActions).interfaceId || super.supportsInterface(_interfaceId);
     }
 
+    /// @inheritdoc IOptimisticActions
+    function getOptimsticAction(IDAO _dao, uint32 _id) external view returns (OptimisticActionRequest memory request) {
+        return optimisticDaoRequests[_dao][_id];
+    }
+
     /// @inheritdoc TrustlessActions
     function createAction(
         IDAOManager _manager,
