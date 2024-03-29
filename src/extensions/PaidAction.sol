@@ -24,17 +24,20 @@ abstract contract PaidAction is ERC165, IPaidAction {
     }
 
     function _ensurePaid(IDAO _dao) internal {
-        PaidDaoSettings memory paidSettings = paidDaoSettings[_dao];
+        uint256 cost = paidDaoSettings[_dao].cost;
 
-        // Dispute cost is required to create an action. It is sent to the DAO.
-        if (msg.value < paidSettings.cost) {
-            revert Underpaying();
-        }
+        // Gas optimization
+        if (cost != 0) {
+            // Cost is required to create an action. It is sent to the DAO.
+            if (msg.value < cost) {
+                revert Underpaying();
+            }
 
-        // Normal address.transfer does not work with gas estimation
-        (bool succes,) = address(_dao).call{value: msg.value}("");
-        if (!succes) {
-            revert TransferToDAOFailed();
+            // Normal address.transfer does not work with gas estimation
+            (bool succes,) = address(_dao).call{value: msg.value}("");
+            if (!succes) {
+                revert TransferToDAOFailed();
+            }
         }
     }
 }
