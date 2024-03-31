@@ -16,6 +16,7 @@ export interface TrustlessActionsDeploymentSettings {
 
 export interface TrustlessActionsDeployment {
   optimisticActions: Address;
+  pessimisticActions: Address;
 }
 
 export async function deploy(
