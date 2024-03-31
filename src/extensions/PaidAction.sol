@@ -34,8 +34,8 @@ abstract contract PaidAction is ERC165, IPaidAction {
             }
 
             // Normal address.transfer does not work with gas estimation
-            (bool succes,) = address(_dao).call{value: msg.value}("");
-            if (!succes) {
+            (bool success,) = address(_dao).call{value: msg.value}("");
+            if (!success) {
                 revert TransferToDAOFailed();
             }
         }
