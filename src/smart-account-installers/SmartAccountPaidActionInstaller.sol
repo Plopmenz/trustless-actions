@@ -49,7 +49,7 @@ abstract contract SmartAccountPaidActionInstaller {
         // Enable trustless management (give execute permission).
         SmartAccountTrustlessExecutionLib.setExecutePermission(address(addressTrustlessManagement), true);
 
-        permissionsOnlyInstall(_cost);
+        permissionsInstall(_cost);
     }
 
     /// @notice If Trustless Execution module is already installed and address trustless management is enabled, this will skip those installation steps.
