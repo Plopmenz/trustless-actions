@@ -48,9 +48,8 @@ contract TrustlessActionsTest is Test {
         }
 
         (bytes[] memory returnValues, uint256 failureMap) = trustlessActions.executeAction(dao, id);
-        // [FAIL. Reason: unknown selector `0x97624631` for VmCalls with empty arrays
-        // assertEq(abi.encode(returnValues), abi.encode(shortendReturnValues));
-        // assertEq(failureMap, 0); // No failed actions
+        assertEq(abi.encode(returnValues), abi.encode(shortendReturnValues));
+        assertEq(failureMap, 0); // No failed actions
     }
 
     function test_doubleExecution() external {
