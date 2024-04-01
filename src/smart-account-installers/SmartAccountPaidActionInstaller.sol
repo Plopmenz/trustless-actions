@@ -42,7 +42,7 @@ abstract contract SmartAccountPaidActionInstaller {
 
     /// @notice Installs Trustless Exeuction module in the smart account, grants the address trustless management permission and performs the permissionsInstall.
     /// @param _cost How much native currency someone has to pay to perform the paid action.
-    function fullInstall(uint256 _cost) public {
+    function fullInstall(uint256 _cost) public virtual {
         // Install smart account module
         SmartAccountTrustlessExecutionLib.fullInstall(address(smartAccountTrustlessExecution));
 
@@ -54,8 +54,8 @@ abstract contract SmartAccountPaidActionInstaller {
 
     /// @notice If Trustless Execution module is already installed and address trustless management is enabled, this will skip those installation steps.
     /// @param _cost How much native currency someone has to pay to perform the paid action.
-    function permissionsInstall(uint256 _cost) public {
-        // Set trustless management permissions and optmistic actions delay.
+    function permissionsInstall(uint256 _cost) public virtual {
+        // Grants trustless management permissions and cost.
         if (_cost != 0) {
             paidAction.updateCost(_cost);
         }
@@ -70,7 +70,35 @@ abstract contract SmartAccountPaidActionInstaller {
         grantPermissions();
     }
 
-    function grantPermissions() public virtual;
+    /// @notice Uninstalls Trustless Exeuction module in the smart account, revokes the address trustless management permission and performs the permissionsUninstall.
+    function fullUninstall() public virtual {
+        // Install smart account module
+        SmartAccountTrustlessExecutionLib.fullUninstall();
+
+        // Enable trustless management (give execute permission).
+        SmartAccountTrustlessExecutionLib.setExecutePermission(address(addressTrustlessManagement), false);
+
+        permissionsUninstall();
+    }
+
+    /// @notice If Trustless Execution module is already installed and address trustless management is enabled, this will skip those installation steps.
+    function permissionsUninstall() public virtual {
+        // Revokes trustless management permissions
+        // Cost is not updated, as the contract itself cannot create action anymore anyhow, it will be overwritten on the next install
+        addressTrustlessManagement.changeFunctionAccess(
+            IDAO(address(this)),
+            uint160(address(paidAction)),
+            address(trustlessActions),
+            trustlessActions.createAction.selector,
+            address(0)
+        );
+
+        revokePermissions();
+    }
+
+    function grantPermissions() internal virtual;
+
+    function revokePermissions() internal virtual;
 
     function grantZoneAccess(address _zone) internal {
         addressTrustlessManagement.changeZoneAccess(
@@ -81,6 +109,18 @@ abstract contract SmartAccountPaidActionInstaller {
     function grantFunctionAccess(address _zone, bytes4 _functionSelector) internal {
         addressTrustlessManagement.changeFunctionAccess(
             IDAO(address(this)), uint160(address(trustlessActions)), _zone, _functionSelector, NO_PERMISSION_CHECKER
+        );
+    }
+
+    function revokeZoneAccess(address _zone) internal {
+        addressTrustlessManagement.changeZoneAccess(
+            IDAO(address(this)), uint160(address(trustlessActions)), _zone, address(0)
+        );
+    }
+
+    function revokeFunctionAccess(address _zone, bytes4 _functionSelector) internal {
+        addressTrustlessManagement.changeFunctionAccess(
+            IDAO(address(this)), uint160(address(trustlessActions)), _zone, _functionSelector, address(0)
         );
     }
 }
