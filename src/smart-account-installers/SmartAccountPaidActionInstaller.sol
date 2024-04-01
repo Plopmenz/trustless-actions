@@ -40,13 +40,21 @@ abstract contract SmartAccountPaidActionInstaller {
         paidAction = _paidAction;
     }
 
-    function install(uint256 _cost) public {
+    /// @notice Installs Trustless Exeuction module in the smart account, grants the address trustless management permission and performs the permissionsInstall.
+    /// @param _cost How much native currency someone has to pay to perform the paid action.
+    function fullInstall(uint256 _cost) public {
         // Install smart account module
         SmartAccountTrustlessExecutionLib.fullInstall(address(smartAccountTrustlessExecution));
 
         // Enable trustless management (give execute permission).
         SmartAccountTrustlessExecutionLib.setExecutePermission(address(addressTrustlessManagement), true);
 
+        permissionsOnlyInstall(_cost);
+    }
+
+    /// @notice If Trustless Execution module is already installed and address trustless management is enabled, this will skip those installation steps.
+    /// @param _cost How much native currency someone has to pay to perform the paid action.
+    function permissionsInstall(uint256 _cost) public {
         // Set trustless management permissions and optmistic actions delay.
         if (_cost != 0) {
             paidAction.updateCost(_cost);
@@ -62,7 +70,7 @@ abstract contract SmartAccountPaidActionInstaller {
         grantPermissions();
     }
 
-    function grantPermissions() internal virtual;
+    function grantPermissions() public virtual;
 
     function grantZoneAccess(address _zone) internal {
         addressTrustlessManagement.changeZoneAccess(
