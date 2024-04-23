@@ -10,7 +10,7 @@ interface ICreateTrustlessAction {
     );
 
     /// @notice A container for all info needed to create a trustless action.
-    /// @param manager Mangement solution used by the DAO (for creating trustless actions).
+    /// @param manager Management solution used by the DAO (for creating trustless actions).
     /// @param role Role to use to be allowed to create actions.
     /// @param trustlessActions TrustlessActions contract where to create the action.
     struct ManagementInfo {
@@ -20,7 +20,7 @@ interface ICreateTrustlessAction {
     }
 
     /// @notice A container for all info needed to execute a trustless action.
-    /// @param manager Mangement solution used by the DAO (for executing turstless actions).
+    /// @param manager Management solution used by the DAO (for executing trustless actions).
     /// @param role Role to use to be allowed to execute the trustless action.
     struct TrustlessActionsInfo {
         IDAOManager manager;

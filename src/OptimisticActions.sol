@@ -16,7 +16,11 @@ contract OptimisticActions is TrustlessActions, IOptimisticActions {
     }
 
     /// @inheritdoc IOptimisticActions
-    function getOptimsticAction(IDAO _dao, uint32 _id) external view returns (OptimisticActionRequest memory request) {
+    function getOptimisticAction(IDAO _dao, uint32 _id)
+        external
+        view
+        returns (OptimisticActionRequest memory request)
+    {
         return optimisticDaoRequests[_dao][_id];
     }
 

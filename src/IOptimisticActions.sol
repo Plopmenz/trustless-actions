@@ -25,10 +25,13 @@ interface IOptimisticActions is ITrustlessActions, IDAOExtensionWithAdmin {
         uint64 executableFrom;
     }
 
-    /// @notice Gets a certain optimstic action request.
+    /// @notice Gets a certain optimistic action request.
     /// @param _dao The DAO that has the request.
     /// @param _id The id of the request.
-    function getOptimsticAction(IDAO _dao, uint32 _id) external view returns (OptimisticActionRequest memory request);
+    function getOptimisticAction(IDAO _dao, uint32 _id)
+        external
+        view
+        returns (OptimisticActionRequest memory request);
 
     /// @notice Rejects a certain action request. The sender should be the DAO (utilizing a management solution).
     /// @param _id The id of the request.
@@ -38,6 +41,6 @@ interface IOptimisticActions is ITrustlessActions, IDAOExtensionWithAdmin {
     /// @notice Changes the execute delay of a DAO.
     /// @param _dao The DAO to change the settings of.
     /// @param _executeDelay The new execute delay.
-    /// @dev By default this value is 0, meaning there is no delay. This is likely not desired so you are recommened to set the delay before granting this contract any permissions.
+    /// @dev By default this value is 0, meaning there is no delay. This is likely not desired so you are recommended to set the delay before granting this contract any permissions.
     function setExecuteDelay(IDAO _dao, uint64 _executeDelay) external;
 }
